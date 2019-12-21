@@ -12,54 +12,14 @@ namespace MoronBot.Core.Commands
     public class HelloWorld : ModuleBase<SocketCommandContext>
     {
         [Command("hello"), Alias("siema", "elo", "cześć", "czesc", "dzień dobry"), Summary("Hello world command")]
-        public async Task Dupsko()
+        public async Task Powitanie()
         {
-            await Context.Channel.SendMessageAsync("Siema siema, kurwa witam!");
-        }
-        [Command("bog"),Alias("kto jest twoim panem?","kto jest twoim panem","kto jest bogiem?","kto jest bogiem"), Summary("Kto stworzył")]
-        public async Task Bog()
-        {
-            await Context.Channel.SendMessageAsync("Filip \"Dryjs0n\" Dryja");
-        }
-        [Command("Adaś"), Alias("kto to jest na obrazku?", "kto to jest na awatarze?"), Summary("adas")]
-        public async Task Adas()
-        {
-            await Context.Channel.SendMessageAsync("Pan Adam Kuliś");
+            await Context.Channel.SendMessageAsync("Witam!");
         }
         [Command("savril"), Alias("savril"), Summary("savril")]
         public async Task Savril()
         {
-            await Context.Channel.SendMessageAsync("Savril wypierdalaj");
-        }
-        [Command("wypierdalaj"), Alias("wypierdalaj"), Summary("wypierdalaj")]
-        public async Task Wypierdalaj()
-        {
-            await Context.Channel.SendMessageAsync("Sam wypierdalaj złamasie jebany, na pizde cie jade");
-        }
-        [Command("tabelka"), Summary("Embed test command")]
-        public async Task Embed()
-        {
-            EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithAuthor("Ludzie z serwera", Context.User.GetAvatarUrl());
-            Embed.WithColor(40, 200, 150);
-            Embed.WithFooter("<= to jest chinol", Context.Guild.Owner.GetAvatarUrl());
-            Embed.WithDescription("Marcin Marcin\nFilip Filip\nBorys Borys\nKamil Kamil\nAdam Adam\ndupsko dupsko\ngówno gówno\nłop łop łop łop łop łop\nta, ta, ta\nRurku...");
-            await Context.Channel.SendMessageAsync("", false, Embed.Build());
-        }
-        [Command("jp2"), Alias("jp2"), Summary("jp2")]
-        public async Task JPII()
-        {
-            await Context.Channel.SendMessageAsync("Jan Paweł Drugi gwałcił małe dzieci.");
-        }
-        [Command("borys"), Alias("borys"), Summary("b")]
-        public async Task Borys()
-        {
-            await Context.Channel.SendMessageAsync("Borys Łojapierdoleński robi bardzo ładne dzieła w Phtoshop.\nPrawdziwy talent, mucha nie siada!");
-        }
-        [Command("aaron"), Alias("Aaron","Aaron Urbach","aaron","kamil","wardawy","kamil wardawy","Kamil","Wardawy","Kamil Wardawy"), Summary("aaron")]
-        public async Task Aaron()
-        {
-            await Context.Channel.SendMessageAsync("Aaron Urbach przećpał.");
+            await Context.Channel.SendMessageAsync("Super zabawa");
         }
 
         [Command("kucharz"), Alias("szef", "adam", "Szef", "Adam"), Summary("b")]
