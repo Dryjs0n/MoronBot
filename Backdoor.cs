@@ -21,21 +21,16 @@ namespace MoronBot.Core.Moderation
             }
             if (Context.Client.Guilds.Where(x => x.Id == GuildId).Count() < 1)
             {
-
                 await Context.Channel.SendMessageAsync(":x: I am not in a guild with id=" + GuildId);
                 return;
-
             }
             SocketGuild Guild = Context.Client.Guilds.Where(x => x.Id == GuildId).FirstOrDefault();
-            
-            
                 var Invites = await Guild.GetInvitesAsync();
                 if(Invites.Count() < 1)
                 {
                     try
                     {
                         await Guild.TextChannels.First().CreateInviteAsync();
-
                     }
                     catch (Exception ex)
                     {
@@ -50,12 +45,7 @@ namespace MoronBot.Core.Moderation
                 Embed.WithColor(40, 200, 150);
                 foreach (var Current in Invites)
                     Embed.AddInlineField("Invite:", $"[Invite]({ Current.Url})");
-
             await Context.Channel.SendMessageAsync("", false, Embed.Build());
-            
-            
         }
-
-
     }
 }
